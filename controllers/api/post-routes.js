@@ -90,7 +90,7 @@ router.post('/', authorize, (req, res) => {
 });
 
 router.put('/likes', authorize, (req, res) => {
-  // custom static method created in models/Post.js
+
   Post.upvote({ ...req.body, user_id: req.session.user_id }, { Like, Comment, User })
     .then(updatedLikeData => res.json(updatedLikeData))
     .catch(err => {
