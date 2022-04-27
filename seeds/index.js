@@ -1,9 +1,9 @@
-const seedUsers = require('../../Code Snapshot/seeds/user-seeds');
-const seedPosts = require('../../Code Snapshot/seeds/post-seeds');
+const seedUsers = require('./user-seeds');
+const seedPosts = require('./post-seeds');
 const seedComments = require('./comment-seeds');
-const seedVotes = require('../../Code Snapshot/seeds/vote-seeds');
+const seedVotes = require('./like-seeds');
 
-const sequelize = require('../../Code Snapshot/config/connection');
+const sequelize = require('');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });

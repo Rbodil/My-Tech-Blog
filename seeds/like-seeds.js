@@ -1,4 +1,4 @@
-const { Like } = require('../../Code Snapshot/models');
+const { Like } = require('..//models');
 
 const likedata = [
   {

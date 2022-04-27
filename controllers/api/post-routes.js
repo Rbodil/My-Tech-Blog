@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
+      'post_text',
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
+      'post_text',
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
@@ -79,7 +79,7 @@ router.get('/:id', (req, res) => {
 router.post('/', authorize, (req, res) => {
   Post.create({
     title: req.body.title,
-    post_url: req.body.post_url,
+    post_tex: req.body.post_tex,
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
