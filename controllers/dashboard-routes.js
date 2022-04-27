@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment, Like } = require('../models');
 const authorize = require('../utils/auth');
 
-// get all posts for dashboard
+
 router.get('/', authorize, (req, res) => {
   console.log(req.session);
   console.log('======================');
