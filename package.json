@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
-        "seeds": "node seeds/index.js"
+        "seed": "node seeds/index.js"
     },
     "author": "",
     "license": "ISC",
@@ -20,5 +20,8 @@
         "handlebars": "^4.7.3",
         "mysql2": "^2.3.3",
         "sequelize": "^5.22.5"
+    },
+    "devDependencies": {
+        "@types/express-handlebars": "^6.0.0"
     }
 }

@@ -79,7 +79,7 @@ router.get('/:id', (req, res) => {
 router.post('/', authorize, (req, res) => {
   Post.create({
     title: req.body.title,
-    post_tex: req.body.post_tex,
+    post_text: req.body.post_tex,
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))

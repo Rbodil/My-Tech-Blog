@@ -1,4 +1,4 @@
-const { Like } = require('..//models');
+const { Like } = require('../models');
 
 const likedata = [
   {
