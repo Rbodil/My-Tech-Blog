@@ -5,11 +5,6 @@ const { Post, User, Comment, Like } = require('../models');
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-
-  if(!req.session.loggedIn){
-    res.redirect('/login')
-  }
-  
   Post.findAll({
     attributes: [
       'id',
