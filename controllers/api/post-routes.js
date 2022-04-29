@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
+      'created_at'
     ],
     include: [
       {
@@ -45,8 +44,7 @@ router.get('/:id', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
+      'created_at'
     ],
     include: [
       {
@@ -79,20 +77,10 @@ router.get('/:id', (req, res) => {
 router.post('/', authorize, (req, res) => {
   Post.create({
     title: req.body.title,
-    post_text: req.body.post_tex,
+    post_text: req.body.post_text,
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.put('/likes', authorize, (req, res) => {
-
-  Post.upvote({ ...req.body, user_id: req.session.user_id }, { Like, Comment, User })
-    .then(updatedLikeData => res.json(updatedLikeData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);

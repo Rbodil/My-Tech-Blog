@@ -10,8 +10,7 @@ router.get('/', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
+      'created_at'
     ],
     include: [
       {
@@ -52,8 +51,7 @@ router.get('/post/:id', (req, res) => {
       'id',
       'post_text',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'likes']
+      'created_at'
     ],
     include: [
       {
@@ -91,7 +89,7 @@ router.get('/post/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
