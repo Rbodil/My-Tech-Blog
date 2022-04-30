@@ -6,23 +6,23 @@ body, html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(37, 37, 37);
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #6922a3;
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: #971fe7;
 }
 
 button {
-  background-color: #225ca3;
+  background-color: #6922a3;
   border: 0;
   padding: 1%;
   color: white;
@@ -33,7 +33,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: #971fe7;
 }
 
 .post-list {
@@ -49,7 +49,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid #971fe7;
 }
 
 textarea {
@@ -80,7 +80,7 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgb(119, 119, 119);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,7 +102,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: #6922a3;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -111,7 +111,7 @@ main {
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: #971fe7;
 }
 
 .delete-post-btn {
@@ -136,15 +136,6 @@ main {
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
-}
-
-.like-btn {
-  background-color: #270f7d;
-  transition: background-color .1s;
-}
-
-.like-btn:hover {
-  background-color: #4e139c;
 }
 
 .comment-form {
@@ -175,7 +166,7 @@ main {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgb(119, 119, 119);
   display: flex;
   justify-content: center;
   padding: 1%;
